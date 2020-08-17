@@ -1,0 +1,44 @@
+{
+  "ERROR": {
+    "error_connection": "Erro de conexão, Tente Novamente",
+    "error_connection_description": "Verifique o sinal de internet e tente efetuar o cadastro novamente",
+    "error_try_again": "Tente novamente",
+    "error_attempts": "Aguarde um pouco e tente novamente",
+    "PASSWORD": {
+      "MIN": "A senha deve conter no mínimo 6 caracteres",
+      "NUM": "A senha deve conter números",
+      "LETTER": "A senha deve conter letras",
+      "SAME": "As senhas não coincidem"
+    }
+  },
+  "COMMON": {
+    "RETRY": "Tente novamente",
+    "FULL_NAME": "Nome completo",
+    "EMPTY_FIELD": "Campo não informado",
+    "BUTTON_CONTINUE": "CONTINUAR",
+    "BUTTON_BACK": "VOLTAR"
+  },
+  "PAGES": {
+    "FABLE": {
+      "SKIP_HISTORY": "PULAR HISTORIA",
+      "WORLD": {
+		  "HELLO" : "OLA?!...",
+		  "TESTING": "TESTANDO!!",
+		  "HEADER": "OLA, \nSOBREVIVENTE",
+		  "HISTORY": "ESTAMOS NO ANO DE 2020 E ALGO DE ESTRANHO ACONTECEU..."
+      },
+      "APOCALYPSE": {
+        "HEADER": "ESTAVA TUDO NORMAL...",
+        "HISTORY": "MAS ALGO TOMOU CONTA DAS PESSOAS E SE ALASTROU PELO MUNDO"
+      },
+      "VIRUS": {
+        "HEADER": "T-VIRUS",
+        "HISTORY": "UM VIRUS CONTAGIOSO E MORTAL, CAPAZ DE DEIXAR AS PESSOAS FORA DE SI E CANCELAR UNS AOS OUTROS"
+      },
+      "SURVIVE": {
+        "HEADER": "E VOCÊ TEM UM MISSAO...",
+        "HISTORY": "ENCONTRAR OUTROS SOBREVIVENTES PELO MUNDO E SOBREVIVER SEM SE CONTAMINAR! BOA SORTE!!"
+      }
+    }
+  }
+}

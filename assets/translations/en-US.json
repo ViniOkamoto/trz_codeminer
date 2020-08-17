@@ -1,0 +1,47 @@
+{
+  "ERROR": {
+    "error_connection": "Connection error\nTry again",
+    "error_connection_description": "Check the internet signal and\ntry to register again",
+    "error_try_again": "Try again",
+    "error_attempts": "Wait a while and try again",
+    "PASSWORD": {
+      "MIN": "Password must contain at least 6 characters",
+      "NUM": "Password must contain numbers",
+      "LETTER": "Password must contain letters",
+      "SAME": "Password does not match"
+    }
+  },
+  "COMMON": {
+    "RETRY": "Retry",
+    "FULL_NAME": "Full name",
+    "DETAILS": "Details",
+    "SELECT": "Select",
+    "LOGIN": "Login",
+    "EMPTY_FIELD": "Field not informed",
+    "BUTTON_CONTINUE": "CONTINUE",
+    "BUTTON_BACK": "BACK"
+  },
+  "PAGES": {
+    "FABLE": {
+      "SKIP_HISTORY":"SKIP HISTORY",
+      "WORLD": {
+        "HELLO" : "HELLO?!...",
+        "TESTING": "TESTING!!",
+        "HEADER": "HELLO, \nSurvivor",
+        "HISTORY": "WE ARE IN THE YEAR 2020 AND SOMETHING STRANGER HAPPENED..."
+      },
+      "APOCALYPSE": {
+        "HEADER": "WAS ALL NORMAL...",
+        "HISTORY": "BUT SOMETHING TOOK OVER PEOPLE AND A DEADLY VIRUS HAS SPREAD ACROSS THE WORLD"
+      },
+      "VIRUS": {
+        "HEADER": "T-VIRUS",
+        "HISTORY": "A CONTAGIOUS AND DEADLY VIRUS, ABLE TO GET PEOPLE OUT OF THEIR MINDS AND CANCEL EACH OTHER "
+      },
+      "SURVIVE": {
+        "HEADER": "AND YOU HAVE A MISSION...",
+        "HISTORY": "FIND OTHER SURVIVORS AROUND THE WORLD AND SURVIVE WITHOUT GETTING INFECTED! GOOD LUCK!!"
+      }
+    }
+  }
+}

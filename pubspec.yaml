@@ -19,9 +19,9 @@ dependencies:
   get_it: ^4.0.4
   dartz: ^0.9.1
   easy_localization:
+  animated_text_kit: ^2.2.0
 
 dev_dependencies:
-  mockito:
   build_runner: ^1.10.0
   mobx_codegen: ^1.1.0+1
   flutter_test:
@@ -31,11 +31,12 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
- - assets/images/
- - assets/images/icons
- - assets/images/gifs
- - assets/images/widgets
+  assets:
+   - assets/images/
+   - assets/images/icons/
+   - assets/images/widgets/
+   - assets/gifs/
+   - assets/translations/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -48,10 +49,10 @@ assets:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-fonts:
- - family: Retro Computer
-   fonts:
-     - asset: assets/fonts/retro_computer_personal_use.ttf
+  fonts:
+   - family: Retro Computer
+     fonts:
+       - asset: assets/fonts/retro_computer_personal_use.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
