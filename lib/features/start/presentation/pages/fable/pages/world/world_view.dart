@@ -27,7 +27,7 @@ class _WorldViewState extends State<WorldView> with TickerProviderStateMixin {
       duration: Duration(seconds: 2),
     );
     _fadeInWorld = Tween<double>(begin: 0.0, end: 1).animate(animationWorld);
-    Future.delayed(Duration(seconds: 8)).then((value) {
+    Future.delayed(Duration(milliseconds: 8500)).then((value) {
       animationWorld.forward();
       _fableStore.buttonIsValid = true;
     });

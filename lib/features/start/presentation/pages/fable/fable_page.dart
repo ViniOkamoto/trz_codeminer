@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/routes.dart';
+import 'package:trzapp/features/shared/presentation/widgets/app_button.dart';
 import 'package:trzapp/features/start/presentation/pages/fable/pages/apocalypse/apocalypse_view.dart';
 import 'package:trzapp/features/start/presentation/pages/fable/pages/survive/survive_view.dart';
 import 'package:trzapp/features/start/presentation/pages/fable/pages/virus/virus_view.dart';
@@ -52,6 +54,10 @@ class _FablePageState extends State<FablePage> {
                 children: [
                   AppButton(
                     onPressed: () {
+                      if (_store.currentPage == 3) {
+                        Navigator.pushReplacementNamed(
+                            context, Routes.createAccount);
+                      }
                       _store.nextView();
                     },
                     btnIsValid: _store.enabledButton,
@@ -61,6 +67,10 @@ class _FablePageState extends State<FablePage> {
                       ? Padding(
                           padding: EdgeInsets.only(top: size.height * 0.011),
                           child: GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacementNamed(
+                                  context, Routes.createAccount);
+                            },
                             child: FittedBox(
                               fit: BoxFit.scaleDown,
                               child: Text(
@@ -76,42 +86,6 @@ class _FablePageState extends State<FablePage> {
               );
             }),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class AppButton extends StatelessWidget {
-  final Function onPressed;
-  final bool btnIsValid;
-  final String text;
-
-  const AppButton({
-    @required this.btnIsValid,
-    @required this.onPressed,
-    @required this.text,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width * 0.56,
-      height: size.width * 0.13,
-      child: RaisedButton(
-        onPressed: btnIsValid ? onPressed : null,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0.0),
-            side: BorderSide(color: whiteColor)),
-        color: primaryColor,
-        child: Center(
-          child: FittedBox(
-            child: Text(
-              "$text",
-              style: TextStyle(fontSize: 18, color: whiteColor),
-            ),
-          ),
         ),
       ),
     );

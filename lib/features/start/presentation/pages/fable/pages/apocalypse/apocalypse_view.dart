@@ -27,7 +27,7 @@ class _ApocalypseViewState extends State<ApocalypseView>
       duration: Duration(seconds: 2),
     );
     _fadeInWorld = Tween<double>(begin: 0.0, end: 1).animate(animationWorld);
-    Future.delayed(Duration(seconds: 7)).then((value) {
+    Future.delayed(Duration(seconds: 6)).then((value) {
       animationWorld.forward();
       _fableStore.buttonIsValid = true;
     });
