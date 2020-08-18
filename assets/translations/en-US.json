@@ -23,9 +23,9 @@
   },
   "PAGES": {
     "FABLE": {
-      "SKIP_HISTORY":"SKIP HISTORY",
+      "SKIP_HISTORY": "SKIP HISTORY",
       "WORLD": {
-        "HELLO" : "HELLO?!...",
+        "HELLO": "HELLO?!...",
         "TESTING": "TESTING!!",
         "HEADER": "HELLO, \nSurvivor",
         "HISTORY": "WE ARE IN THE YEAR 2020 AND SOMETHING STRANGER HAPPENED..."
@@ -41,6 +41,25 @@
       "SURVIVE": {
         "HEADER": "AND YOU HAVE A MISSION...",
         "HISTORY": "FIND OTHER SURVIVORS AROUND THE WORLD AND SURVIVE WITHOUT GETTING INFECTED! GOOD LUCK!!"
+      }
+    },
+    "CREATE_ACCOUNT": {
+      "GENDER": {
+        "HEADER": "SURVIVOR, LET'S START",
+        "DESCRIPTION": "FOR THIS WE NEED TO COLLECT SOME DATA",
+        "HINT": "CHOOSE A SEX"
+      },
+      "NAME": {
+        "HEADER": "NOW, WHAT'S YOUR NAME?",
+        "HINT": "TYPE HERE YOUR NAME",
+        "ERROR_EMPTY": "YOU NEED A NAME",
+        "ERROR_LENGTH": "YOUR NAME MUST BE AT LEAST 3 CHARACTERS"
+      },
+      "AGE": {
+        "HEADER": "AND YOUR AGE?",
+        "HINT": "TYPE HERE YOUR AGE",
+        "ERROR_EMPTY": "YOU NEED A AGE",
+        "ERROR_AGE": "YOU'RE TOO YOUNG"
       }
     }
   }
