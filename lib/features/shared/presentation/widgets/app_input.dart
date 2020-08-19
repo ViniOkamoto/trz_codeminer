@@ -8,6 +8,7 @@ class AppInput extends StatelessWidget {
     @required this.hintText,
     this.textColor = whiteColor,
     this.fontSize = 18,
+    this.keyboardType = TextInputType.text,
   });
 
   final Color textColor;
@@ -15,12 +16,14 @@ class AppInput extends StatelessWidget {
   final TextEditingController controller;
   final Function(String) onChanged;
   final double fontSize;
+  final TextInputType keyboardType;
   @override
   Widget build(BuildContext context) {
     return TextField(
       maxLines: 2,
       controller: controller,
       onChanged: onChanged,
+      keyboardType: keyboardType,
       style: TextStyle(color: whiteColor, fontSize: fontSize),
       textInputAction: TextInputAction.done,
       textAlign: TextAlign.center,
