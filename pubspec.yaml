@@ -20,6 +20,7 @@ dependencies:
   dartz: ^0.9.1
   easy_localization:
   animated_text_kit: ^2.2.0
+  location: ^3.0.0
 
 dev_dependencies:
   build_runner: ^1.10.0
