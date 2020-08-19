@@ -1,15 +1,8 @@
 {
   "ERROR": {
-    "error_connection": "Connection error\nTry again",
-    "error_connection_description": "Check the internet signal and\ntry to register again",
-    "error_try_again": "Try again",
-    "error_attempts": "Wait a while and try again",
-    "PASSWORD": {
-      "MIN": "Password must contain at least 6 characters",
-      "NUM": "Password must contain numbers",
-      "LETTER": "Password must contain letters",
-      "SAME": "Password does not match"
-    }
+    "ERROR_CONNECTION": "Connection error\nTry again",
+    "ERROR_CONNECTION_DESCRIPTION": "Check the internet signal and\ntry to register again",
+    "ERROR_UNEXPECTED": "Unexpected Error, sorry :("
   },
   "COMMON": {
     "RETRY": "Retry",
@@ -45,6 +38,7 @@
     },
     "CREATE_ACCOUNT": {
       "BUTTON_REGISTER": "REGISTER",
+      "ERROR_NAME": "NAME HAS ALREADY BEEN TAKEN",
       "GENDER": {
         "HEADER": "SURVIVOR, LET'S START",
         "DESCRIPTION": "FOR THIS WE NEED TO COLLECT SOME DATA",
@@ -63,8 +57,7 @@
         "ERROR_AGE": "YOU'RE TOO YOUNG"
       },
       "LOCATION": {
-        "HEADER": "WE NEED YOUR LOCATION SO YOU CAN FIND OTHER SURVIVORS",
-        "HINT":  "TURN ON LOCATION"
+        "HEADER": "WE NEED YOUR LOCATION SO YOU CAN FIND OTHER SURVIVORS"
       },
       "PACKAGES": {
         "HEADER": "BEING YOUR FIRST ACCESS, WE WILL LET YOU CHOOSE YOUR INITIAL PACKAGE",

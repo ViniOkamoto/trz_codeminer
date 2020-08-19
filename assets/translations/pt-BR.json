@@ -1,15 +1,8 @@
 {
   "ERROR": {
-    "error_connection": "Erro de conexão, Tente Novamente",
-    "error_connection_description": "Verifique o sinal de internet e tente efetuar o cadastro novamente",
-    "error_try_again": "Tente novamente",
-    "error_attempts": "Aguarde um pouco e tente novamente",
-    "PASSWORD": {
-      "MIN": "A senha deve conter no mínimo 6 caracteres",
-      "NUM": "A senha deve conter números",
-      "LETTER": "A senha deve conter letras",
-      "SAME": "As senhas não coincidem"
-    }
+    "ERROR_CONNECTION": "Erro de conexão, Tente Novamente",
+    "ERROR_CONNECTION_DESCRIPTION": "Verifique o sinal de internet e tente efetuar o cadastro novamente",
+    "ERROR_UNEXPECTED": "Erro inesperado, desculpe :("
   },
   "COMMON": {
     "RETRY": "Tente novamente",
@@ -42,6 +35,7 @@
     },
     "CREATE_ACCOUNT": {
       "BUTTON_REGISTER": "REGISTRAR",
+      "ERROR_NAME": "NOME JA UTILIZADO",
       "GENDER": {
         "HEADER": "SOBREVIVENTE, VAMOS COMEÇAR",
         "DESCRIPTION": "PARA ISSO PRECISAMOS COLETAR ALGUNS DADOS",
@@ -60,8 +54,7 @@
         "ERROR_AGE": "VOCE E MUITO NOVO"
       },
       "LOCATION": {
-        "HEADER": "PRECISAMOS DA SUA LOCALIZACAO PARA QUE VOCE POSSA ENCONTRAR OUTROS SOBREVIVENTES",
-        "HINT":  "ATIVAR LOCALIZACAO"
+        "HEADER": "PRECISAMOS DA SUA LOCALIZACAO PARA QUE VOCE POSSA ENCONTRAR OUTROS SOBREVIVENTES"
       },
       "PACKAGES": {
         "HEADER": "SENDO O SEU PRIMEIRO ACESSO, DEIXAREMOS QUE ESCOLHA SEU PACOTE INICIAL.",
