@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
 import 'package:trzapp/core/values/routes.dart';
+import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 import 'package:trzapp/features/start/presentation/stores/splash/splash_store.dart';
 
 class SplashPage extends StatefulWidget {
@@ -11,6 +12,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   final SplashStore _store = SplashStore();
+  final UserStore _auth = UserStore();
   AnimationController animationPresents;
   Animation<double> _fadeInFadeOutPresents;
   Animation<double> _fadeInLogo;
@@ -34,8 +36,14 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     Future.delayed(Duration(seconds: 8)).then(
       (value) {
         animationLogo.forward();
-        Future.delayed(Duration(seconds: 5)).then(
-            (value) => Navigator.pushReplacementNamed(context, Routes.fable));
+        var id = _auth.getId();
+        if (id != null) {
+          Future.delayed(Duration(seconds: 4)).then(
+              (value) => Navigator.pushReplacementNamed(context, Routes.home));
+        } else {
+          Future.delayed(Duration(seconds: 4)).then(
+              (value) => Navigator.pushReplacementNamed(context, Routes.fable));
+        }
       },
     );
     animationPresents.addStatusListener((status) {
