@@ -5,7 +5,9 @@ import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/age/age_view.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/gender/gender_view.dart';
+import 'package:trzapp/features/create_account/presentation/pages/create_account/views/location/location_view.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/name/name_view.dart';
+import 'package:trzapp/features/create_account/presentation/pages/create_account/views/packages/packages_view.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/create_account_store.dart';
 import 'package:trzapp/features/shared/presentation/widgets/app_button.dart';
 
@@ -21,6 +23,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
     GenderView(),
     NameView(),
     AgeView(),
+    LocationView(),
+    PackagesView(),
   ];
 
   @override
@@ -53,10 +57,15 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   children: [
                     AppButton(
                       onPressed: () {
+                        if (_store.currentPage == 4) {
+                          _store.registerUser();
+                        }
                         _store.nextView();
                       },
                       btnIsValid: _store.enabledButton,
-                      text: 'COMMON.BUTTON_CONTINUE'.tr(),
+                      text: _store.currentPage == 4
+                          ? 'PAGES.CREATE_ACCOUNT.BUTTON_REGISTER'.tr()
+                          : 'COMMON.BUTTON_CONTINUE'.tr(),
                     ),
                   ],
                 );
