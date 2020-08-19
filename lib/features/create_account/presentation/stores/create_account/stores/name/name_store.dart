@@ -31,18 +31,20 @@ abstract class _NameStoreBase with Store {
 
   _setName(value) {
     errorText = null;
-    _debounceTiming(() {
-      name = value;
-      errorText = _validateField();
-      if (errorText == null) {
-        createAccountStore.person.name = value;
-        setBtnValid();
-      }
-    });
+    setBtnInvalid();
+    _debounceTiming(
+      () {
+        name = value;
+        errorText = _validateField();
+        if (errorText == null) {
+          setBtnValid();
+        }
+        createAccountStore.person.name = errorText != null ? null : value;
+      },
+    );
   }
 
   _validateField() {
-    print("aqui");
     if (name.isEmpty) {
       return "PAGES.CREATE_ACCOUNT.NAME.ERROR_EMPTY";
     }
@@ -54,6 +56,9 @@ abstract class _NameStoreBase with Store {
 
   @action
   setBtnValid() => createAccountStore.buttonIsValid = true;
+
+  @action
+  setBtnInvalid() => createAccountStore.buttonIsValid = false;
 
   @observable
   bool firstTextFinished = false;
