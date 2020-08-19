@@ -20,6 +20,7 @@ abstract class _PackagesStoreBase with Store {
   _setPackage(value) {
     package = value;
     createAccountStore.person.items = _fillPackage(value);
+    setBtnValid();
   }
 
   String _fillPackage(value) {

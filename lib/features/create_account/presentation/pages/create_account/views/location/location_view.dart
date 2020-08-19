@@ -2,7 +2,6 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:location/location.dart';
 import 'package:trzapp/core/values/colors.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/widgets/header_views.dart';
@@ -55,14 +54,14 @@ class LocationView extends StatelessWidget {
                   SizedBox(
                     width: size.width,
                     child: TypewriterAnimatedTextKit(
-                      speed: Duration(milliseconds: 150),
+                      speed: Duration(milliseconds: 80),
                       totalRepeatCount: 1,
                       text: [
                         'PAGES.CREATE_ACCOUNT.LOCATION.HEADER'.tr(),
                       ],
                       isRepeatingAnimation: false,
                       onFinished: () {
-                        _store.firstTextFinished = true;
+                        _checkGeolocalizationStatus();
                       },
                       textStyle: TextStyle(
                         fontSize: 15.0,
@@ -71,29 +70,6 @@ class LocationView extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  Observer(builder: (context) {
-                    if (_store.firstTextFinished)
-                      return SizedBox(
-                        width: size.width,
-                        child: TypewriterAnimatedTextKit(
-                          speed: Duration(milliseconds: 150),
-                          totalRepeatCount: 1,
-                          text: [
-                            'PAGES.CREATE_ACCOUNT.LOCATION.HINT'.tr(),
-                          ],
-                          isRepeatingAnimation: false,
-                          onFinished: () {
-                            _checkGeolocalizationStatus();
-                          },
-                          textStyle: TextStyle(
-                            fontSize: 15.0,
-                            color: whiteColor,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      );
-                    return Container();
-                  }),
                 ],
               ),
             ),
