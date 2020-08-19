@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/routes.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/age/age_view.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/gender/gender_view.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/location/location_view.dart';
@@ -56,9 +57,21 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     AppButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if (_store.currentPage == 4) {
-                          _store.registerUser();
+                          String result = await _store.registerUser();
+                          if (result != "OK") {
+                            Scaffold.of(context).showSnackBar(
+                              SnackBar(
+                                backgroundColor: Colors.red,
+                                elevation: 1,
+                                content: Text(result.tr()),
+                              ),
+                            );
+                            return;
+                          }
+                          Navigator.pushReplacementNamed(context, Routes.home);
+                          return;
                         }
                         _store.nextView();
                       },
