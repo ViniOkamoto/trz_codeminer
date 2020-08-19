@@ -3,4 +3,5 @@ class Routes {
   static const createAccount = '/createAccount';
   static const fable = '/fable';
   static const tutorial = '/tutorial';
+  static const home = '/home';
 }

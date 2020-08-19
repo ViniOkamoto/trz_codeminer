@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trzapp/core/values/routes.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/create_account_pages.dart';
+import 'package:trzapp/features/main/apresentation/pages/home/home_page.dart';
 import 'package:trzapp/features/start/presentation/pages/fable/fable_page.dart';
 import 'package:trzapp/features/start/presentation/pages/splash/splash_page.dart';
 
@@ -18,6 +19,10 @@ class Router {
       case Routes.createAccount:
         return MaterialPageRoute(
           builder: (_) => CreateAccountPage(),
+        );
+      case Routes.home:
+        return MaterialPageRoute(
+          builder: (_) => HomePage(),
         );
       default:
         return MaterialPageRoute(
