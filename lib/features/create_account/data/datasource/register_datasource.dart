@@ -3,11 +3,11 @@ import 'package:trzapp/core/utils/custom_dio/custom_dio.dart';
 import 'package:trzapp/features/shared/data/mappers/person_mapper.dart';
 import 'package:trzapp/features/shared/domain/entities/person.dart';
 
-abstract class IPeopleDatasource {
+abstract class IRegisterDatasource {
   Future<Response> registerAccount(Person person);
 }
 
-class PeopleDatasource implements IPeopleDatasource {
+class RegisterDatasource implements IRegisterDatasource {
   CustomDio _dio = CustomDio(Dio());
 
   @override

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:trzapp/features/create_account/domain/i_repositories/i_people_repository.dart';
+import 'package:trzapp/features/create_account/domain/i_repositories/i_register_repository.dart';
 import 'package:trzapp/features/shared/domain/entities/person.dart';
 
 abstract class IRegisterAccount {
@@ -7,7 +7,7 @@ abstract class IRegisterAccount {
 }
 
 class RegisterAccount implements IRegisterAccount {
-  final IPeopleRepository _repository;
+  final IRegisterRepository _repository;
   RegisterAccount(this._repository);
 
   @override

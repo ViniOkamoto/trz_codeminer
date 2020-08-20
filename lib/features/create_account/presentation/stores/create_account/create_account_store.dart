@@ -6,7 +6,7 @@ import 'package:trzapp/features/create_account/domain/usecases/register_account.
 import 'package:trzapp/features/shared/data/mappers/user_mapper.dart';
 import 'package:trzapp/features/shared/domain/entities/person.dart';
 import 'package:trzapp/features/shared/domain/entities/user.dart';
-import 'package:trzapp/features/shared/domain/usecases/user_auth.dart';
+import 'package:trzapp/features/shared/domain/usecases/users/user_auth.dart';
 
 part 'create_account_store.g.dart';
 
@@ -43,6 +43,7 @@ abstract class _CreateAccountStoreBase with Store {
       if (response.statusCode == 201 || response.statusCode == 200) {
         User user = UserMapper.fromJson(response.data);
         await _auth.saveUser(user);
+
         return "OK";
       }
       return "PAGES.CREATE_ACCOUNT.ERROR_NAME";
