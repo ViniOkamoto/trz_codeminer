@@ -65,6 +65,12 @@
         "WALKING_AMBULANCE": "WALKING AMBULANCE",
         "GLUTTON": "GLUTTON"
       }
+    },
+    "HOME": {
+      "NAME_USER": "HELLO, {}",
+      "UPDATED_DATA": "UPDATED DATA!",
+      "HUMANS": "HUMANS",
+      "INFECTEDS": "INFECTEDS"
     }
   }
 }

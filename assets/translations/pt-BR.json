@@ -62,6 +62,12 @@
         "WALKING_AMBULANCE": "AMBULÂNCIA AMBULANTE",
         "GLUTTON": "COMILAO"
       }
+    },
+    "HOME": {
+      "NAME_USER": "OLA, {}",
+      "UPDATED_DATA": "DADOS ATUALIZADOS!",
+      "HUMANS": "HUMANOS",
+      "INFECTEDS": "INFECTADOS"
     }
   }
 }
