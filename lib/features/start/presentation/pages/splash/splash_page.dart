@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
 import 'package:trzapp/core/values/routes.dart';
 import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
@@ -12,7 +13,7 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   final SplashStore _store = SplashStore();
-  final UserStore _auth = UserStore();
+  final UserStore _auth = serviceLocator<UserStore>();
   AnimationController animationPresents;
   Animation<double> _fadeInFadeOutPresents;
   Animation<double> _fadeInLogo;
@@ -34,15 +35,28 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _fadeInLogo = Tween<double>(begin: 0.0, end: 1).animate(animationLogo);
 
     Future.delayed(Duration(seconds: 8)).then(
-      (value) {
+      (value) async {
         animationLogo.forward();
-        var id = _auth.getId();
+        var id = await _auth.getId();
         if (id != null) {
+          var result = await _auth.getUserInfo();
+          if (result == "INFECTED") {
+            Future.delayed(Duration(seconds: 4)).then((value) =>
+                Navigator.pushReplacementNamed(context, Routes.infected));
+            return;
+          }
+          if (result == "NOT FOUND") {
+            Future.delayed(Duration(seconds: 4)).then((value) =>
+                Navigator.pushReplacementNamed(context, Routes.fable));
+            return;
+          }
           Future.delayed(Duration(seconds: 4)).then(
               (value) => Navigator.pushReplacementNamed(context, Routes.home));
+          return;
         } else {
           Future.delayed(Duration(seconds: 4)).then(
               (value) => Navigator.pushReplacementNamed(context, Routes.fable));
+          return;
         }
       },
     );

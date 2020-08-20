@@ -4,4 +4,5 @@ class Routes {
   static const fable = '/fable';
   static const tutorial = '/tutorial';
   static const home = '/home';
+  static const infected = "/infected";
 }
