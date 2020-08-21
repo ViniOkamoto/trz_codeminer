@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
@@ -37,26 +39,34 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     Future.delayed(Duration(seconds: 8)).then(
       (value) async {
         animationLogo.forward();
-        var id = await _auth.getId();
-        if (id != null) {
-          var result = await _auth.getUserInfo();
-          if (result == "INFECTED") {
-            Future.delayed(Duration(seconds: 4)).then((value) =>
-                Navigator.pushReplacementNamed(context, Routes.infected));
-            return;
+        try {
+          final result = await InternetAddress.lookup('google.com');
+          if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+            var id = await _auth.getId();
+            if (id != null) {
+              var result = await _auth.getUserInfo();
+              if (result == "INFECTED") {
+                Future.delayed(Duration(seconds: 4)).then((value) =>
+                    Navigator.pushReplacementNamed(context, Routes.infected));
+                return;
+              }
+              if (result == "NOT FOUND") {
+                Future.delayed(Duration(seconds: 4)).then((value) =>
+                    Navigator.pushReplacementNamed(context, Routes.fable));
+                return;
+              }
+              Future.delayed(Duration(seconds: 4)).then((value) =>
+                  Navigator.pushReplacementNamed(context, Routes.main));
+              return;
+            } else {
+              Future.delayed(Duration(seconds: 4)).then((value) =>
+                  Navigator.pushReplacementNamed(context, Routes.fable));
+              return;
+            }
           }
-          if (result == "NOT FOUND") {
-            Future.delayed(Duration(seconds: 4)).then((value) =>
-                Navigator.pushReplacementNamed(context, Routes.fable));
-            return;
-          }
-          Future.delayed(Duration(seconds: 4)).then(
-              (value) => Navigator.pushReplacementNamed(context, Routes.main));
-          return;
-        } else {
-          Future.delayed(Duration(seconds: 4)).then(
-              (value) => Navigator.pushReplacementNamed(context, Routes.fable));
-          return;
+        } on SocketException catch (_) {
+          Future.delayed(Duration(seconds: 4)).then((value) =>
+              Navigator.pushReplacementNamed(context, Routes.no_connection));
         }
       },
     );
