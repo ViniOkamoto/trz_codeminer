@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
@@ -22,7 +23,7 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          EdgeInsets.only(bottom: size.height * 0.1, left: size.width * 0.01),
+          EdgeInsets.only(bottom: size.height * 0.02, left: size.width * 0.01),
       child: Observer(
         builder: (context) {
           return Row(
@@ -67,7 +68,8 @@ class BottomBar extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "Pontos: ${_userStore.points}",
+                                  "PAGES.MAIN.POINTS"
+                                      .tr(args: [_userStore.points.toString()]),
                                   style: TextStyle(
                                     color: whiteColor,
                                     fontSize: 12,
