@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trzapp/core/values/routes.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/create_account_pages.dart';
-import 'package:trzapp/features/main/apresentation/pages/home/home_page.dart';
+import 'package:trzapp/features/main/apresentation/pages/main/main_page.dart';
 import 'package:trzapp/features/shared/presentation/pages/infected/infected_page.dart';
 import 'package:trzapp/features/start/presentation/pages/fable/fable_page.dart';
 import 'package:trzapp/features/start/presentation/pages/splash/splash_page.dart';
@@ -21,9 +21,9 @@ class Router {
         return MaterialPageRoute(
           builder: (_) => CreateAccountPage(),
         );
-      case Routes.home:
+      case Routes.main:
         return MaterialPageRoute(
-          builder: (_) => HomePage(),
+          builder: (_) => MainPage(),
         );
       case Routes.infected:
         return MaterialPageRoute(
