@@ -58,8 +58,10 @@ abstract class _UserStoreBase with Store {
     return "NOT FOUND";
   }
 
+  @action
   Future<String> getItems() async {
     Response response = await _items.getItemsUser(id);
+    points = 0;
     if (response.statusCode == 200) {
       for (var json in response.data) {
         ItemInfo itemInfo = ItemInfoMapper.fromJson(json);

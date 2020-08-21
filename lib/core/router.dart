@@ -3,6 +3,7 @@ import 'package:trzapp/core/values/routes.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/create_account_pages.dart';
 import 'package:trzapp/features/main/apresentation/pages/main/main_page.dart';
 import 'package:trzapp/features/shared/presentation/pages/infected/infected_page.dart';
+import 'package:trzapp/features/shared/presentation/pages/no_connection/no_connection_page.dart';
 import 'package:trzapp/features/start/presentation/pages/fable/fable_page.dart';
 import 'package:trzapp/features/start/presentation/pages/splash/splash_page.dart';
 
@@ -28,6 +29,10 @@ class Router {
       case Routes.infected:
         return MaterialPageRoute(
           builder: (_) => InfectedPage(),
+        );
+      case Routes.no_connection:
+        return MaterialPageRoute(
+          builder: (_) => NoConnectionPage(),
         );
       default:
         return MaterialPageRoute(

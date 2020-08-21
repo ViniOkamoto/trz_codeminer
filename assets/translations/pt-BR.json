@@ -5,11 +5,11 @@
     "ERROR_UNEXPECTED": "Erro inesperado, desculpe :("
   },
   "COMMON": {
-    "RETRY": "Tente novamente",
-    "FULL_NAME": "Nome completo",
-    "EMPTY_FIELD": "Campo não informado",
+    "RETRY": "Tente novamente!",
     "BUTTON_CONTINUE": "CONTINUAR",
-    "BUTTON_BACK": "VOLTAR"
+    "BUTTON_BACK": "VOLTAR",
+    "YES": "SIM!",
+    "NO": "NAO!"
   },
   "PAGES": {
     "FABLE": {
@@ -63,11 +63,28 @@
         "GLUTTON": "COMILAO"
       }
     },
-    "HOME": {
-      "NAME_USER": "OLA, {}",
-      "UPDATED_DATA": "DADOS ATUALIZADOS!",
-      "HUMANS": "HUMANOS",
-      "INFECTEDS": "INFECTADOS"
+    "MAIN": {
+      "REPORTS": {
+        "NAME_USER": "OLA, {}",
+        "UPDATED_DATA": "DADOS ATUALIZADOS!",
+        "HUMANS": "HUMANOS",
+        "INFECTEDS": "INFECTADOS"
+      },
+      "POINTS": "PONTOS: {}",
+      "CONTACT": {
+        "HEADER": "LISTA DE CONTATOS",
+        "AGE": "{} ANOS",
+        "ADD": {
+          "DESCRIPTION": "ADICIONE SEUS AMIGOS PELO MUNDO!",
+          "MY_QR": "MEU QR CODE",
+          "GENERATE_QR": "GERAR MEU QR CODE",
+          "SCAN_QR": "ESCANEAR QR CODE"
+        },
+        "REPORT": {
+          "DESCRIPTION": "TEM A CERTEZA DE QUE O SEU AMIGO ESTÁ INFECTADO? APÓS ISSO SEU AMIGO SERÁ DELETADO DOS SEUS CONTATOS",
+          "ALREADY_REPORTED": "VOCE JA REPORTOU SEU AMIGO!"
+        }
+      }
     }
   }
 }

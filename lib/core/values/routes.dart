@@ -5,4 +5,5 @@ class Routes {
   static const tutorial = '/tutorial';
   static const main = '/main';
   static const infected = "/infected";
+  static const no_connection = "/no_connection";
 }

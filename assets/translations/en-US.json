@@ -1,18 +1,15 @@
 {
   "ERROR": {
-    "ERROR_CONNECTION": "Connection error\nTry again",
+    "ERROR_CONNECTION": "Connection error, Try again",
     "ERROR_CONNECTION_DESCRIPTION": "Check the internet signal and\ntry to register again",
     "ERROR_UNEXPECTED": "Unexpected Error, sorry :("
   },
   "COMMON": {
-    "RETRY": "Retry",
-    "FULL_NAME": "Full name",
-    "DETAILS": "Details",
-    "SELECT": "Select",
-    "LOGIN": "Login",
-    "EMPTY_FIELD": "Field not informed",
+    "RETRY": "TRY AGAIN!",
     "BUTTON_CONTINUE": "CONTINUE",
-    "BUTTON_BACK": "BACK"
+    "BUTTON_BACK": "BACK",
+    "YES": "YES!",
+    "NO": "NO!"
   },
   "PAGES": {
     "FABLE": {
@@ -66,11 +63,28 @@
         "GLUTTON": "GLUTTON"
       }
     },
-    "HOME": {
-      "NAME_USER": "HELLO, {}",
-      "UPDATED_DATA": "UPDATED DATA!",
-      "HUMANS": "HUMANS",
-      "INFECTEDS": "INFECTEDS"
+    "MAIN": {
+      "REPORTS": {
+        "NAME_USER": "HELLO, {}",
+        "UPDATED_DATA": "UPDATED DATA!",
+        "HUMANS": "HUMANS",
+        "INFECTEDS": "INFECTEDS"
+      },
+      "POINTS": "POINTS: {}",
+      "CONTACT": {
+        "HEADER": "CONTACTS LIST",
+        "AGE": "{} YEARS",
+        "ADD": {
+          "DESCRIPTION": "ADD YOUR FRIENDS AROUND THE WORLD!",
+          "MY_QR": "MY QR CODE",
+          "GENERATE_QR": "GENERATE MY QR CODE",
+          "SCAN_QR": "SCAN QR CODE"
+        },
+        "REPORT": {
+          "DESCRIPTION": "ARE YOU SURE YOUR FRIEND IS INFECTED? AFTER THIS YOUR FRIEND WILL BE DELETED FROM YOUR CONTACTS",
+          "ALREADY_REPORTED": "YOU HAVE ALREADY REPORTED YOUR FRIEND!"
+        }
+      }
     }
   }
 }
