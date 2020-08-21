@@ -48,7 +48,7 @@ abstract class _CreateAccountStoreBase with Store {
       }
       return "PAGES.CREATE_ACCOUNT.ERROR_NAME";
     } catch (e) {
-      return "ERROR.UNEXPECTED";
+      return "ERROR_UNEXPECTED";
     }
   }
 
