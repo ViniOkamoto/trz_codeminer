@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
 import 'package:trzapp/features/shared/domain/entities/person.dart';
 
-part 'home_store.g.dart';
+part 'main_store.g.dart';
 
-class HomeStore = _HomeStoreBase with _$HomeStore;
+class MainStore = _MainStoreBase with _$MainStore;
 
-abstract class _HomeStoreBase with Store {
+abstract class _MainStoreBase with Store {
   final PageController pageController = PageController(initialPage: 0);
 
   @observable
@@ -14,6 +14,7 @@ abstract class _HomeStoreBase with Store {
 
   int indexViews;
   int _currentPage = 0;
+  int currentPage = 0;
 
   @observable
   bool inventoryIsOpen = false;
@@ -28,7 +29,9 @@ abstract class _HomeStoreBase with Store {
       _currentPage = indexViews - 1;
     } else {
       pageController.animateToPage(_currentPage,
-          duration: Duration(milliseconds: 850), curve: Curves.linearToEaseOut);
+          duration: Duration(milliseconds: 850),
+          curve: Curves.fastLinearToSlowEaseIn);
     }
+    currentPage = _currentPage;
   }
 }

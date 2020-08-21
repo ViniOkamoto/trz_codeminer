@@ -17,4 +17,9 @@ class User {
       this.createdAt,
       this.updatedAt,
       this.infected});
+
+  @override
+  String toString() {
+    return '{"id":"$id", "name": "$name", "age": $age, "gender": "$gender", "lonlat": "$lonlat", "infected": $infected}';
+  }
 }

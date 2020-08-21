@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
-import 'package:trzapp/features/main/apresentation/stores/home/home_store.dart';
+import 'package:trzapp/features/main/apresentation/stores/main/main_store.dart';
 import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({
     Key key,
     @required this.size,
-    @required HomeStore homeStore,
+    @required MainStore homeStore,
     @required UserStore userStore,
   })  : _homeStore = homeStore,
         _userStore = userStore,
         super(key: key);
 
   final Size size;
-  final HomeStore _homeStore;
+  final MainStore _homeStore;
   final UserStore _userStore;
 
   @override

@@ -8,9 +8,9 @@ class UserMapper {
       age: json['age'],
       gender: json['gender'],
       lonlat: json['lonlat'],
-      createdAt: json['created_at'],
-      updatedAt: json['updated_at'],
-      infected: json['infected'],
+      infected: json['infected'] == 1
+          ? true
+          : json['infected'] == 0 ? false : json['infected'],
     );
   }
 
@@ -21,9 +21,7 @@ class UserMapper {
     data['age'] = user.age;
     data['gender'] = user.gender;
     data['lonlat'] = user.lonlat;
-    data['created_at'] = user.createdAt;
-    data['updated_at'] = user.updatedAt;
-    data['infected'] = user.infected;
+    data['infected'] = user.infected ? "1" : "0";
     return data;
   }
 }

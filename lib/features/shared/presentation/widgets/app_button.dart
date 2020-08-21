@@ -7,7 +7,7 @@ class AppButton extends StatelessWidget {
   final String text;
 
   const AppButton({
-    @required this.btnIsValid,
+    this.btnIsValid = true,
     @required this.onPressed,
     @required this.text,
   });

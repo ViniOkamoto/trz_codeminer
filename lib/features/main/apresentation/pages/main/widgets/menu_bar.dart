@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:trzapp/features/main/apresentation/stores/main/main_store.dart';
 
 class MenuBar extends StatelessWidget {
   const MenuBar({
     Key key,
     @required this.size,
+    @required this.mainStore,
   }) : super(key: key);
 
   final Size size;
+  final MainStore mainStore;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,9 @@ class MenuBar extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: size.height * 0.05),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    mainStore.selectView(0);
+                  },
                   iconSize: size.width * 0.1,
                   icon: Image.asset(
                     "assets/images/icons/house.png",
@@ -38,7 +43,9 @@ class MenuBar extends StatelessWidget {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  mainStore.selectView(1);
+                },
                 iconSize: size.width * 0.1,
                 icon: Image.asset(
                   "assets/images/icons/exchange.png",
@@ -47,7 +54,9 @@ class MenuBar extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(bottom: size.height * 0.05),
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    mainStore.selectView(2);
+                  },
                   iconSize: size.width * 0.1,
                   icon: Image.asset(
                     "assets/images/icons/list_contact_pixel.png",

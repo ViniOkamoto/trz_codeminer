@@ -1,5 +1,5 @@
-import 'package:dio/src/response.dart';
-import 'package:trzapp/features/shared/data/datasource/local/properties/properties_datasource.dart';
+import 'package:dio/dio.dart';
+import 'package:trzapp/features/shared/data/datasource/remote/properties/properties_datasource.dart';
 import 'package:trzapp/features/shared/domain/i_repositories/properties/i_properties_repository.dart';
 
 class PropertiesRepository implements IPropertiesRepository {

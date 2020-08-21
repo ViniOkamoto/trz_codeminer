@@ -51,7 +51,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
             return;
           }
           Future.delayed(Duration(seconds: 4)).then(
-              (value) => Navigator.pushReplacementNamed(context, Routes.home));
+              (value) => Navigator.pushReplacementNamed(context, Routes.main));
           return;
         } else {
           Future.delayed(Duration(seconds: 4)).then(
