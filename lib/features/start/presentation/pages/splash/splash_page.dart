@@ -39,6 +39,8 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     Future.delayed(Duration(seconds: 8)).then(
       (value) async {
         animationLogo.forward();
+//        Future.delayed(Duration(seconds: 4)).then((value) =>
+//            Navigator.pushReplacementNamed(context, Routes.infected));
         try {
           final result = await InternetAddress.lookup('google.com');
           if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {

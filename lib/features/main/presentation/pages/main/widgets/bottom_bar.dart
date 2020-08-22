@@ -2,7 +2,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
-import 'package:trzapp/features/main/apresentation/stores/main/main_store.dart';
+import 'package:trzapp/core/values/constants.dart';
+import 'package:trzapp/features/main/presentation/stores/main/main_store.dart';
 import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 
 class BottomBar extends StatelessWidget {
@@ -72,7 +73,7 @@ class BottomBar extends StatelessWidget {
                                       .tr(args: [_userStore.points.toString()]),
                                   style: TextStyle(
                                     color: whiteColor,
-                                    fontSize: 12,
+                                    fontSize: size.width * FONT_SIZE_12,
                                   ),
                                 ),
                                 Row(
@@ -119,7 +120,8 @@ class BottomBar extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: whiteColor,
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 15,
+                                                    fontSize: size.width *
+                                                        FONT_SIZE_15,
                                                   ),
                                                 ),
                                               ),
@@ -143,7 +145,8 @@ class BottomBar extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: whiteColor,
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 15,
+                                                    fontSize: size.width *
+                                                        FONT_SIZE_15,
                                                   ),
                                                 ),
                                               ),
@@ -167,7 +170,8 @@ class BottomBar extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: whiteColor,
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 15,
+                                                    fontSize: size.width *
+                                                        FONT_SIZE_15,
                                                   ),
                                                 ),
                                               ),
@@ -191,7 +195,8 @@ class BottomBar extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: whiteColor,
                                                     fontWeight: FontWeight.bold,
-                                                    fontSize: 15,
+                                                    fontSize: size.width *
+                                                        FONT_SIZE_15,
                                                   ),
                                                 ),
                                               ),

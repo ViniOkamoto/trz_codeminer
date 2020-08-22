@@ -49,12 +49,10 @@ abstract class _UserStoreBase with Store {
     Response response = await _userInfo.getUserInfoUser(id);
     if (response.statusCode == 200) {
       user = UserMapper.fromJson(response.data);
-      print(user.name);
       if (user.infected) return "INFECTED";
       await getItems();
       return null;
     }
-    print("ta aqui?");
     return "NOT FOUND";
   }
 
@@ -82,11 +80,6 @@ abstract class _UserStoreBase with Store {
         points += itemInfo.getPoint();
         _list.add(itemInfo);
       }
-      print(fiji);
-      print(camp);
-      print(ak);
-      print(medkit);
-      print(points);
       return null;
     }
   }

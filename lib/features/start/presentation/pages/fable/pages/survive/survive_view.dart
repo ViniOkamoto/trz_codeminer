@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/start/presentation/stores/fable/fable_store.dart';
 
 class SurviveView extends StatefulWidget {
@@ -17,18 +18,18 @@ class SurviveView extends StatefulWidget {
 
 class _SurviveViewState extends State<SurviveView>
     with TickerProviderStateMixin {
-  Animation<double> _fadeInWorld;
-  AnimationController animationWorld;
+  Animation<double> _fadeInAttack;
+  AnimationController animationAttack;
 
   @override
   void initState() {
-    animationWorld = AnimationController(
+    animationAttack = AnimationController(
       vsync: this,
       duration: Duration(seconds: 2),
     );
-    _fadeInWorld = Tween<double>(begin: 0.0, end: 1).animate(animationWorld);
+    _fadeInAttack = Tween<double>(begin: 0.0, end: 1).animate(animationAttack);
     Future.delayed(Duration(seconds: 7)).then((value) {
-      animationWorld.forward();
+      animationAttack.forward();
       _fableStore.buttonIsValid = true;
     });
     super.initState();
@@ -60,7 +61,7 @@ class _SurviveViewState extends State<SurviveView>
                         _fableStore.firstTextFinished = true;
                       },
                       textStyle: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: size.width * FONT_SIZE_18,
                         fontWeight: FontWeight.w800,
                         color: whiteColor,
                       ),
@@ -83,7 +84,7 @@ class _SurviveViewState extends State<SurviveView>
                                 'PAGES.FABLE.SURVIVE.HISTORY'.tr(),
                               ],
                               textStyle: TextStyle(
-                                fontSize: 18.0,
+                                fontSize: size.width * FONT_SIZE_18,
                                 color: whiteColor,
                               ),
                               textAlign: TextAlign.start,
@@ -103,7 +104,7 @@ class _SurviveViewState extends State<SurviveView>
           ),
           Center(
             child: FadeTransition(
-              opacity: _fadeInWorld,
+              opacity: _fadeInAttack,
               child: Image.asset(
                 'assets/images/tweet_attack.png',
                 fit: BoxFit.fill,
@@ -118,7 +119,7 @@ class _SurviveViewState extends State<SurviveView>
 
   @override
   void dispose() {
-    animationWorld.dispose();
+    animationAttack.dispose();
     super.dispose();
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 
 class AppButton extends StatelessWidget {
   final Function onPressed;
@@ -30,7 +31,7 @@ class AppButton extends StatelessWidget {
             child: Text(
               "$text",
               style: TextStyle(
-                fontSize: 18,
+                fontSize: size.width * FONT_SIZE_18,
                 color: whiteColor,
               ),
             ),

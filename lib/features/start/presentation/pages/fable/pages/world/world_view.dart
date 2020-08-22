@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/start/presentation/stores/fable/fable_store.dart';
 
 class WorldView extends StatefulWidget {
@@ -61,7 +62,7 @@ class _WorldViewState extends State<WorldView> with TickerProviderStateMixin {
                     _fableStore.firstTextFinished = true;
                   },
                   textStyle: TextStyle(
-                    fontSize: 18.0,
+                    fontSize: size.width * FONT_SIZE_18,
                     color: whiteColor,
                   ),
                   textAlign: TextAlign.start,
@@ -83,7 +84,7 @@ class _WorldViewState extends State<WorldView> with TickerProviderStateMixin {
                             'PAGES.FABLE.WORLD.HISTORY'.tr(),
                           ],
                           textStyle: TextStyle(
-                            fontSize: 18.0,
+                            fontSize: size.width * FONT_SIZE_18,
                             color: whiteColor,
                           ),
                           textAlign: TextAlign.start,

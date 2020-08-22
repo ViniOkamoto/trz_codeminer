@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/start/presentation/stores/fable/fable_store.dart';
 
 class ApocalypseView extends StatefulWidget {
@@ -58,7 +59,7 @@ class _ApocalypseViewState extends State<ApocalypseView>
                     _fableStore.firstTextFinished = true;
                   },
                   textStyle: TextStyle(
-                      fontSize: 18.0,
+                      fontSize: size.width * FONT_SIZE_18,
                       color: whiteColor,
                       fontWeight: FontWeight.bold),
                   textAlign: TextAlign.start,
@@ -80,7 +81,7 @@ class _ApocalypseViewState extends State<ApocalypseView>
                             'PAGES.FABLE.APOCALYPSE.HISTORY'.tr(),
                           ],
                           textStyle: TextStyle(
-                            fontSize: 18.0,
+                            fontSize: size.width * FONT_SIZE_18,
                             color: whiteColor,
                           ),
                           textAlign: TextAlign.start,

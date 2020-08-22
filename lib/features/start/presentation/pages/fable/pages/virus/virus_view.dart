@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/di/service_locator.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/start/presentation/stores/fable/fable_store.dart';
 
 class VirusView extends StatefulWidget {
@@ -16,18 +17,18 @@ class VirusView extends StatefulWidget {
 }
 
 class _VirusViewState extends State<VirusView> with TickerProviderStateMixin {
-  Animation<double> _fadeInWorld;
-  AnimationController animationWorld;
+  Animation<double> _fadeInVirus;
+  AnimationController animationVirus;
 
   @override
   void initState() {
-    animationWorld = AnimationController(
+    animationVirus = AnimationController(
       vsync: this,
       duration: Duration(seconds: 2),
     );
-    _fadeInWorld = Tween<double>(begin: 0.0, end: 1).animate(animationWorld);
+    _fadeInVirus = Tween<double>(begin: 0.0, end: 1).animate(animationVirus);
     Future.delayed(Duration(seconds: 6)).then((value) {
-      animationWorld.forward();
+      animationVirus.forward();
       _fableStore.buttonIsValid = true;
     });
     super.initState();
@@ -57,7 +58,7 @@ class _VirusViewState extends State<VirusView> with TickerProviderStateMixin {
                     _fableStore.firstTextFinished = true;
                   },
                   textStyle: TextStyle(
-                    fontSize: 18.0,
+                    fontSize: size.width * FONT_SIZE_18,
                     color: primaryColor,
                     fontWeight: FontWeight.w900,
                   ),
@@ -80,7 +81,7 @@ class _VirusViewState extends State<VirusView> with TickerProviderStateMixin {
                             'PAGES.FABLE.VIRUS.HISTORY'.tr(),
                           ],
                           textStyle: TextStyle(
-                            fontSize: 18.0,
+                            fontSize: size.width * FONT_SIZE_18,
                             color: whiteColor,
                           ),
                           textAlign: TextAlign.start,
@@ -97,7 +98,7 @@ class _VirusViewState extends State<VirusView> with TickerProviderStateMixin {
             ),
             Center(
               child: FadeTransition(
-                opacity: _fadeInWorld,
+                opacity: _fadeInVirus,
                 child: Image.asset(
                   'assets/gifs/horde_tweeteds.gif',
                   fit: BoxFit.fill,
@@ -113,7 +114,7 @@ class _VirusViewState extends State<VirusView> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    animationWorld.dispose();
+    animationVirus.dispose();
     super.dispose();
   }
 }

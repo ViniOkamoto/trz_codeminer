@@ -6,29 +6,33 @@ import 'package:trzapp/core/values/colors.dart';
 import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/core/values/routes.dart';
 import 'package:trzapp/features/shared/presentation/widgets/app_button.dart';
-import 'package:trzapp/features/start/presentation/pages/fable/pages/apocalypse/apocalypse_view.dart';
-import 'package:trzapp/features/start/presentation/pages/fable/pages/survive/survive_view.dart';
-import 'package:trzapp/features/start/presentation/pages/fable/pages/virus/virus_view.dart';
-import 'package:trzapp/features/start/presentation/pages/fable/pages/world/world_view.dart';
-import 'package:trzapp/features/start/presentation/stores/fable/fable_store.dart';
+import 'package:trzapp/features/start/presentation/pages/tutorial/views/be_careful/be_careful.dart';
+import 'package:trzapp/features/start/presentation/pages/tutorial/views/friends/friends_view.dart';
+import 'package:trzapp/features/start/presentation/pages/tutorial/views/negotiate/negotiate_view.dart';
+import 'package:trzapp/features/start/presentation/pages/tutorial/views/ready/ready_view.dart';
+import 'package:trzapp/features/start/presentation/pages/tutorial/views/report/report_view.dart';
+import 'package:trzapp/features/start/presentation/pages/tutorial/views/winner/winner_view.dart';
+import 'package:trzapp/features/start/presentation/stores/tutorial/tutorial_store.dart';
 
-class FablePage extends StatefulWidget {
+class TutorialPage extends StatefulWidget {
   @override
-  _FablePageState createState() => _FablePageState();
+  _TutorialPageState createState() => _TutorialPageState();
 }
 
-class _FablePageState extends State<FablePage> {
-  FableStore _store;
+class _TutorialPageState extends State<TutorialPage> {
+  TutorialStore _store;
 
   List<Widget> pages = [
-    WorldView(),
-    ApocalypseView(),
-    VirusView(),
-    SurviveView(),
+    ReadyView(),
+    FriendsView(),
+    NegotiateView(),
+    BeCarefulView(),
+    ReportView(),
+    WinnerView(),
   ];
   @override
   void initState() {
-    _store = serviceLocator<FableStore>();
+    _store = serviceLocator<TutorialStore>();
     _store.indexViews = pages.length;
     super.initState();
   }
@@ -55,27 +59,29 @@ class _FablePageState extends State<FablePage> {
                 children: [
                   AppButton(
                     onPressed: () {
-                      if (_store.currentPage == 3) {
-                        Navigator.pushReplacementNamed(
-                            context, Routes.createAccount);
+                      if (_store.currentPage == 5) {
+                        Navigator.pushReplacementNamed(context, Routes.main);
+                        return;
                       }
                       _store.nextView();
                     },
                     btnIsValid: _store.enabledButton,
-                    text: 'COMMON.BUTTON_CONTINUE'.tr(),
+                    text: _store.currentPage == 5
+                        ? "PAGES.TUTORIAL.LETS_GO".tr()
+                        : 'COMMON.BUTTON_CONTINUE'.tr(),
                   ),
-                  _store.currentPage != 3
+                  _store.currentPage != 5
                       ? Padding(
                           padding: EdgeInsets.only(top: size.height * 0.011),
                           child: GestureDetector(
                             onTap: () {
                               Navigator.pushReplacementNamed(
-                                  context, Routes.createAccount);
+                                  context, Routes.main);
                             },
                             child: FittedBox(
                               fit: BoxFit.scaleDown,
                               child: Text(
-                                'PAGES.FABLE.SKIP_HISTORY'.tr(),
+                                'PAGES.TUTORIAL.SKIP'.tr(),
                                 style: TextStyle(
                                     fontSize: size.width * FONT_SIZE_14,
                                     color: greyLightColor),

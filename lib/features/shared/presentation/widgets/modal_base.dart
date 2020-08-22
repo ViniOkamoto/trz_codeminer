@@ -37,7 +37,7 @@ class ModalBase extends StatelessWidget {
                   alignment: AlignmentDirectional.topStart,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      Navigator.pop(context, false);
                     },
                     child: Image.asset(
                       "assets/images/icons/arrow_icon_black.png",

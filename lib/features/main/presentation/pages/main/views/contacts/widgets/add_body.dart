@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
-import 'package:trzapp/features/main/apresentation/stores/main/views/contact/contact_store.dart';
+import 'package:trzapp/features/main/presentation/stores/main/views/contact/contact_store.dart';
 import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 import 'package:trzapp/features/shared/presentation/widgets/app_button.dart';
 import 'package:trzapp/features/shared/presentation/widgets/modal_base.dart';
@@ -77,8 +77,7 @@ class AddBody extends StatelessWidget {
                 onPressed: () async {
                   String cameraScanResult = await scanner.scan();
                   _store.addContact(cameraScanResult, _userStore.id);
-                  _store.getAllContacts();
-                  Navigator.pop(context);
+                  Navigator.pop(context, true);
                 },
                 text: "PAGES.MAIN.CONTACT.ADD.SCAN_QR".tr(),
               ),

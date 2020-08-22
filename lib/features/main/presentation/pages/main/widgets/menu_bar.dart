@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trzapp/features/main/apresentation/stores/main/main_store.dart';
+import 'package:trzapp/features/main/presentation/stores/main/main_store.dart';
 
 class MenuBar extends StatelessWidget {
   const MenuBar({

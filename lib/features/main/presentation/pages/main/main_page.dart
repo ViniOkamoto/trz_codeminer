@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:trzapp/core/di/service_locator.dart';
-import 'package:trzapp/features/main/apresentation/pages/main/views/contacts/contact_view.dart';
-import 'package:trzapp/features/main/apresentation/pages/main/views/reports/reports_view.dart';
-import 'package:trzapp/features/main/apresentation/pages/main/views/trade/trade_view.dart';
-import 'package:trzapp/features/main/apresentation/pages/main/widgets/bottom_bar.dart';
-import 'package:trzapp/features/main/apresentation/pages/main/widgets/menu_bar.dart';
-import 'package:trzapp/features/main/apresentation/stores/main/main_store.dart';
+import 'package:trzapp/features/main/presentation/pages/main/views/contacts/contact_view.dart';
+import 'package:trzapp/features/main/presentation/pages/main/views/reports/reports_view.dart';
+import 'package:trzapp/features/main/presentation/pages/main/views/trade/trade_view.dart';
+import 'package:trzapp/features/main/presentation/pages/main/widgets/bottom_bar.dart';
+import 'package:trzapp/features/main/presentation/pages/main/widgets/menu_bar.dart';
+import 'package:trzapp/features/main/presentation/stores/main/main_store.dart';
 import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 
 class MainPage extends StatefulWidget {

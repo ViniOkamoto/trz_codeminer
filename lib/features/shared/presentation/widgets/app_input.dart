@@ -7,7 +7,7 @@ class AppInput extends StatelessWidget {
     @required this.onChanged,
     @required this.hintText,
     this.textColor = whiteColor,
-    this.fontSize = 18,
+    this.fontSize = 12,
     this.keyboardType = TextInputType.text,
   });
 

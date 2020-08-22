@@ -12,7 +12,6 @@ class UserCache implements IUserCache {
   Future<bool> saveUser(User user) async {
     Map map = UserMapper.toJson(user);
     String userId = map["id"];
-    print(userId);
     SharedPrefs.setString('userId', userId);
 
     return true;

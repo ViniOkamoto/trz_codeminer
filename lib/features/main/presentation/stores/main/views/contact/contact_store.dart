@@ -31,7 +31,7 @@ abstract class _ContactStoreBase with Store {
 
   @action
   getAllContacts() async {
-    listUsers = ObservableList<User>();
+    listUsers = ObservableList();
     _contact.getAllContact().then(
           (value) => value.forEach(
             (element) {
@@ -50,6 +50,8 @@ abstract class _ContactStoreBase with Store {
       return "OK";
     }
     if (response.statusCode == 422) {
+      await _contact.deleteContact(infected);
+      listUsers.removeWhere((element) => element.id == infected);
       return "PAGES.MAIN.CONTACT.REPORT.ALREADY_REPORTED";
     }
 
@@ -59,8 +61,10 @@ abstract class _ContactStoreBase with Store {
   addContact(String user, String id) async {
     Map<String, dynamic> map = json.decode(user);
     if (map["id"] != id) {
-      await _contact.saveContact(UserMapper.fromJson(map));
-      await getAllContacts();
+      bool userExist = listUsers.any((element) => element.id == map["id"]);
+      if (!userExist) {
+        await _contact.saveContact(UserMapper.fromJson(map));
+      }
     }
   }
 }
