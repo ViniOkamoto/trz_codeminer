@@ -4,13 +4,26 @@ A new Flutter application.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Hello survivor, I hope things are normal. It is the year 2020 and many things have happened. a pandemic took over the world and people started to behave strangely.
 
-A few resources to get you started if this is your first Flutter project:
+## Features in TRZ
+- Contact list
+- Scan and Generate QRCode
+- Localization in register.
+- Report of infecteds and non infecteds
+- Pixel UI
+- Clean Archicteture
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Installation
+- You will need to have the [Flutter](https://flutter.dev/docs/get-started/install) set up on your computer
+- [OPTIONAL] [Slidy CLI](https://github.com/Flutterando/slidy)
+- In the project console, place the commands.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```shell
+// code in the project console
+
+$ flutter pub get
+$ flutter pub run build_runner watch --delete-conflict-outputs
+```
+
+> It's so easy, right?

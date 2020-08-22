@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/age/widgets/put_age.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/widgets/header_views.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/stores/age/age_store.dart';
@@ -38,7 +39,7 @@ class AgeView extends StatelessWidget {
                         _store.firstTextFinished = true;
                       },
                       textStyle: TextStyle(
-                        fontSize: 15.0,
+                        fontSize: size.width * FONT_SIZE_12,
                         color: whiteColor,
                       ),
                       textAlign: TextAlign.center,

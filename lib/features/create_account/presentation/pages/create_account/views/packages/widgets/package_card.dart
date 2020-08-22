@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 
 class PackageCard extends StatelessWidget {
   final constraints;
@@ -29,6 +30,7 @@ class PackageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -63,7 +65,7 @@ class PackageCard extends StatelessWidget {
                           text.tr(),
                           style: TextStyle(
                             color: blackColor,
-                            fontSize: 14,
+                            fontSize: size.width * FONT_SIZE_14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -87,7 +89,7 @@ class PackageCard extends StatelessWidget {
                                   fijiWater,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: size.width * FONT_SIZE_14,
                                   ),
                                 ),
                               ],
@@ -103,7 +105,7 @@ class PackageCard extends StatelessWidget {
                                   campBell,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: size.width * FONT_SIZE_14,
                                   ),
                                 ),
                               ],
@@ -119,7 +121,7 @@ class PackageCard extends StatelessWidget {
                                   medkit,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: size.width * FONT_SIZE_14,
                                   ),
                                 ),
                               ],
@@ -135,7 +137,7 @@ class PackageCard extends StatelessWidget {
                                   ak,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: size.width * FONT_SIZE_14,
                                   ),
                                 ),
                               ],

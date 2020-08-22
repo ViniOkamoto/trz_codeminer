@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/stores/name/name_store.dart';
 import 'package:trzapp/features/shared/presentation/widgets/app_input.dart';
 
@@ -29,6 +30,7 @@ class PutName extends StatelessWidget {
                 ),
                 child: SizedBox(
                   child: AppInput(
+                    fontSize: size.width * FONT_SIZE_14,
                     controller: _store.nameController,
                     hintText: "PAGES.CREATE_ACCOUNT.NAME.HINT".tr(),
                     onChanged: _store.setName,
@@ -38,7 +40,10 @@ class PutName extends StatelessWidget {
               _store.errorText != null
                   ? Text(
                       _store.errorText.tr(),
-                      style: TextStyle(color: Colors.red, fontSize: 12),
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: size.width * FONT_SIZE_12,
+                      ),
                       textAlign: TextAlign.center,
                     )
                   : Container(),

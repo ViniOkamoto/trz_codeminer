@@ -5,10 +5,15 @@ import 'package:trzapp/features/create_account/data/repositories/register_reposi
 import 'package:trzapp/features/create_account/domain/i_repositories/i_register_repository.dart';
 import 'package:trzapp/features/create_account/domain/usecases/register_account.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/create_account_store.dart';
-import 'package:trzapp/features/main/data/datasource/local/contact/contact_datasource.dart';
+import 'package:trzapp/features/main/data/datasource/remote/contact/contact_datasource.dart';
+import 'package:trzapp/features/main/data/datasource/remote/report/report_datasource.dart';
 import 'package:trzapp/features/main/data/repositories/contact/contact_repository.dart';
+import 'package:trzapp/features/main/data/repositories/report/report_repository.dart';
 import 'package:trzapp/features/main/domain/i_repositories/contact/i_contact_repository.dart';
+import 'package:trzapp/features/main/domain/i_repositories/report/i_report_repository.dart';
 import 'package:trzapp/features/main/domain/usecases/contact/manage_contact.dart';
+import 'package:trzapp/features/main/domain/usecases/report/get_infecteds.dart';
+import 'package:trzapp/features/main/domain/usecases/report/get_non_infecteds.dart';
 import 'package:trzapp/features/shared/data/datasource/cache/user_cache.dart';
 import 'package:trzapp/features/shared/data/datasource/remote/people/people_datasource.dart';
 import 'package:trzapp/features/shared/data/datasource/remote/properties/properties_datasource.dart';
@@ -25,6 +30,7 @@ import 'package:trzapp/features/shared/domain/usecases/properties/get_items.dart
 import 'package:trzapp/features/shared/domain/usecases/users/user_auth.dart';
 import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 import 'package:trzapp/features/start/presentation/stores/fable/fable_store.dart';
+import 'package:trzapp/features/start/presentation/stores/tutorial/tutorial_store.dart';
 
 final GetIt serviceLocator = GetIt.I;
 
@@ -39,6 +45,8 @@ Future<void> setupLocator() async {
   serviceLocator.registerLazySingleton<IUserCache>(() => UserCache());
   serviceLocator
       .registerLazySingleton<IContactDatasource>(() => ContactDatasource());
+  serviceLocator
+      .registerLazySingleton<IReportDatasource>(() => ReportDatasource());
 
   //Repositories
   serviceLocator.registerLazySingleton<IRegisterRepository>(
@@ -51,6 +59,8 @@ Future<void> setupLocator() async {
       () => UserRepository(serviceLocator<IUserCache>()));
   serviceLocator.registerLazySingleton<IContactRepository>(
       () => ContactRepository(serviceLocator<IContactDatasource>()));
+  serviceLocator.registerLazySingleton<IReportRepository>(
+      () => ReportRepository(serviceLocator<IReportDatasource>()));
 
   //Usecases
   serviceLocator.registerLazySingleton<IRegisterAccount>(
@@ -66,10 +76,15 @@ Future<void> setupLocator() async {
       () => ReportUser(serviceLocator<IPeopleRepository>()));
   serviceLocator.registerFactory<IUpdateLocation>(
       () => UpdateLocation(serviceLocator<IPeopleRepository>()));
+  serviceLocator.registerFactory<IGetInfected>(
+      () => GetInfected(serviceLocator<IReportRepository>()));
+  serviceLocator.registerFactory<IGetNonInfected>(
+      () => GetNonInfected(serviceLocator<IReportRepository>()));
 
   //Stores
   serviceLocator.registerLazySingleton<UserStore>(() => UserStore());
   serviceLocator.registerLazySingleton<FableStore>(() => FableStore());
+  serviceLocator.registerLazySingleton<TutorialStore>(() => TutorialStore());
   serviceLocator
       .registerLazySingleton<CreateAccountStore>(() => CreateAccountStore());
 

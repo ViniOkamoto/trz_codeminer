@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/gender/widgets/select_gender.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/stores/gender/gender_store.dart';
 
@@ -47,7 +48,7 @@ class GenderView extends StatelessWidget {
                         _store.firstTextFinished = true;
                       },
                       textStyle: TextStyle(
-                        fontSize: 15.0,
+                        fontSize: size.width * FONT_SIZE_12,
                         color: whiteColor,
                       ),
                       textAlign: TextAlign.center,
@@ -67,7 +68,7 @@ class GenderView extends StatelessWidget {
                                 'PAGES.CREATE_ACCOUNT.GENDER.DESCRIPTION'.tr(),
                               ],
                               textStyle: TextStyle(
-                                fontSize: 15.0,
+                                fontSize: size.width * FONT_SIZE_12,
                                 color: whiteColor,
                               ),
                               textAlign: TextAlign.center,
@@ -94,7 +95,7 @@ class GenderView extends StatelessWidget {
                                 'PAGES.CREATE_ACCOUNT.GENDER.HINT'.tr(),
                               ],
                               textStyle: TextStyle(
-                                fontSize: 15.0,
+                                fontSize: size.width * FONT_SIZE_12,
                                 color: whiteColor,
                               ),
                               textAlign: TextAlign.center,

@@ -17,7 +17,6 @@ dependencies:
   shared_preferences: ^0.5.8
   cpfcnpj: ^1.0.3
   get_it: ^4.0.4
-  dartz: ^0.9.1
   easy_localization:
   animated_text_kit: ^2.2.0
   location: ^3.0.0

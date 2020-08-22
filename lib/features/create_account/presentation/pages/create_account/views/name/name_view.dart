@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:trzapp/core/values/colors.dart';
+import 'package:trzapp/core/values/constants.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/name/widgets/put_name.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/widgets/header_views.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/stores/name/name_store.dart';
@@ -17,6 +18,7 @@ class NameView extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.072),
       child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -38,7 +40,7 @@ class NameView extends StatelessWidget {
                         _store.firstTextFinished = true;
                       },
                       textStyle: TextStyle(
-                        fontSize: 15.0,
+                        fontSize: size.width * FONT_SIZE_12,
                         color: whiteColor,
                       ),
                       textAlign: TextAlign.center,

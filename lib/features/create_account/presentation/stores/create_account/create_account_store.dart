@@ -39,7 +39,6 @@ abstract class _CreateAccountStoreBase with Store {
   Future<String> registerUser() async {
     try {
       Response response = await _register.registerAccount(person);
-      print(response.statusCode);
       if (response.statusCode == 201 || response.statusCode == 200) {
         User user = UserMapper.fromJson(response.data);
         await _auth.saveUser(user);

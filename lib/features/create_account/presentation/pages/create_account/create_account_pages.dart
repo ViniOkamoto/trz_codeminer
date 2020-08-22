@@ -70,7 +70,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                             );
                             return;
                           }
-                          Navigator.pushReplacementNamed(context, Routes.main);
+                          Navigator.pushReplacementNamed(
+                              context, Routes.tutorial);
                           return;
                         }
                         _store.nextView();

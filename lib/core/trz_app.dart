@@ -12,7 +12,7 @@ class TRZApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'uzzipay',
-      onGenerateRoute: Router.generateRoute,
+      onGenerateRoute: RouterApp.generateRoute,
       initialRoute: Routes.splash,
       theme: ThemeData(
         fontFamily: "Retro Computer",
