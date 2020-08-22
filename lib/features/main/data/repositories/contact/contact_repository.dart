@@ -1,4 +1,4 @@
-import 'package:trzapp/features/main/data/datasource/local/contact/contact_datasource.dart';
+import 'package:trzapp/features/main/data/datasource/remote/contact/contact_datasource.dart';
 import 'package:trzapp/features/main/domain/i_repositories/contact/i_contact_repository.dart';
 import 'package:trzapp/features/shared/domain/entities/user.dart';
 
