@@ -37,6 +37,7 @@ abstract class _UserStoreBase with Store {
 
   saveUser(User user) async {
     this.user = user;
+    await getItems();
     return await _auth.saveUser(user);
   }
 

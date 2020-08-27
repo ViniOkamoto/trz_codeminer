@@ -25,10 +25,17 @@ dependencies:
   qrscan: ^0.2.17
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.7.5"
   build_runner: ^1.10.0
   mobx_codegen: ^1.1.0+1
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icons/trz_logo_icon.png"
+  adaptive_icon_background: "assets/images/icons/trz_logo_icon.png"
 
 flutter:
   uses-material-design: true

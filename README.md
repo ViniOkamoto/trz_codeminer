@@ -9,14 +9,14 @@ Hello survivor, I hope things are normal. It is the year 2020 and many things ha
 ## Features in TRZ
 - Contact list
 - Scan and Generate QRCode
-- Localization in register.
-- Report of infecteds and non infecteds
+- User registration location.
+-
+
 - Pixel UI
 - Clean Archicteture
 
 ## Installation
 - You will need to have the [Flutter](https://flutter.dev/docs/get-started/install) set up on your computer
-- [OPTIONAL] [Slidy CLI](https://github.com/Flutterando/slidy)
 - In the project console, place the commands.
 
 ```shell
@@ -27,3 +27,5 @@ $ flutter pub run build_runner watch --delete-conflict-outputs
 ```
 
 > It's so easy, right?
+
+I thank you for the opportunity and hope you like it, even though everything has not been implemented.

@@ -12,7 +12,7 @@ class ReportDatasource implements IReportDatasource {
   @override
   Future<Response> getInfected() async {
     try {
-      return await _dio.client.get("/api/report/non_infected.json");
+      return await _dio.client.get("/api/report/infected.json");
     } on DioError catch (e) {
       return e.response;
     }
@@ -21,7 +21,7 @@ class ReportDatasource implements IReportDatasource {
   @override
   Future<Response> getNonInfected() async {
     try {
-      return await _dio.client.get("/api/report/infected.json");
+      return await _dio.client.get("/api/report/non_infected.json");
     } on DioError catch (e) {
       return e.response;
     }

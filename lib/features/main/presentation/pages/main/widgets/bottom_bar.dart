@@ -76,137 +76,148 @@ class BottomBar extends StatelessWidget {
                                     fontSize: size.width * FONT_SIZE_12,
                                   ),
                                 ),
-                                Row(
-                                  children: [
-                                    Container(
-                                      width: constraints.maxWidth * 0.95,
-                                      height: constraints.maxWidth * 0.15,
-                                      padding: EdgeInsets.only(
-                                        left: constraints.maxWidth * 0.05,
-                                        top: constraints.maxHeight * 0.01,
-                                        bottom: constraints.maxHeight * 0.02,
-                                        right: constraints.maxWidth * 0.1,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                            "assets/images/widgets/inventory_bar.png",
+                                Observer(builder: (context) {
+                                  return Row(
+                                    children: [
+                                      Container(
+                                        width: constraints.maxWidth * 0.95,
+                                        height: constraints.maxWidth * 0.15,
+                                        padding: EdgeInsets.only(
+                                          left: constraints.maxWidth * 0.05,
+                                          top: constraints.maxHeight * 0.01,
+                                          bottom: constraints.maxHeight * 0.02,
+                                          right: constraints.maxWidth * 0.1,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                              "assets/images/widgets/inventory_bar.png",
+                                            ),
+                                            fit: BoxFit.fill,
                                           ),
-                                          fit: BoxFit.fill,
+                                        ),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                  "assets/images/fiji_water.png",
+                                                  width: constraints.maxWidth *
+                                                      0.05,
+                                                  height: constraints.maxWidth *
+                                                      0.08,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left:
+                                                          constraints.maxWidth *
+                                                              0.02),
+                                                  child: Text(
+                                                    "${_userStore.fiji}",
+                                                    style: TextStyle(
+                                                      color: whiteColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: size.width *
+                                                          FONT_SIZE_15,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                  "assets/images/campbell.png",
+                                                  width: constraints.maxWidth *
+                                                      0.05,
+                                                  height: constraints.maxWidth *
+                                                      0.08,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left:
+                                                          constraints.maxWidth *
+                                                              0.02),
+                                                  child: Text(
+                                                    "${_userStore.camp}",
+                                                    style: TextStyle(
+                                                      color: whiteColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: size.width *
+                                                          FONT_SIZE_15,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                  "assets/images/medkit.png",
+                                                  width: constraints.maxWidth *
+                                                      0.09,
+                                                  height: constraints.maxWidth *
+                                                      0.08,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left:
+                                                          constraints.maxWidth *
+                                                              0.02),
+                                                  child: Text(
+                                                    "${_userStore.medkit}",
+                                                    style: TextStyle(
+                                                      color: whiteColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: size.width *
+                                                          FONT_SIZE_15,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                Image.asset(
+                                                  "assets/images/ak.png",
+                                                  width: constraints.maxWidth *
+                                                      0.15,
+                                                  height: constraints.maxWidth *
+                                                      0.08,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left:
+                                                          constraints.maxWidth *
+                                                              0.02),
+                                                  child: Text(
+                                                    "${_userStore.ak}",
+                                                    style: TextStyle(
+                                                      color: whiteColor,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: size.width *
+                                                          FONT_SIZE_15,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            )
+                                          ],
                                         ),
                                       ),
-                                      child: Row(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.end,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Image.asset(
-                                                "assets/images/fiji_water.png",
-                                                width:
-                                                    constraints.maxWidth * 0.05,
-                                                height:
-                                                    constraints.maxWidth * 0.08,
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: constraints.maxWidth *
-                                                        0.02),
-                                                child: Text(
-                                                  "${_userStore.fiji}",
-                                                  style: TextStyle(
-                                                    color: whiteColor,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: size.width *
-                                                        FONT_SIZE_15,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Row(
-                                            children: [
-                                              Image.asset(
-                                                "assets/images/campbell.png",
-                                                width:
-                                                    constraints.maxWidth * 0.05,
-                                                height:
-                                                    constraints.maxWidth * 0.08,
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: constraints.maxWidth *
-                                                        0.02),
-                                                child: Text(
-                                                  "${_userStore.camp}",
-                                                  style: TextStyle(
-                                                    color: whiteColor,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: size.width *
-                                                        FONT_SIZE_15,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Row(
-                                            children: [
-                                              Image.asset(
-                                                "assets/images/medkit.png",
-                                                width:
-                                                    constraints.maxWidth * 0.09,
-                                                height:
-                                                    constraints.maxWidth * 0.08,
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: constraints.maxWidth *
-                                                        0.02),
-                                                child: Text(
-                                                  "${_userStore.medkit}",
-                                                  style: TextStyle(
-                                                    color: whiteColor,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: size.width *
-                                                        FONT_SIZE_15,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                          Row(
-                                            children: [
-                                              Image.asset(
-                                                "assets/images/ak.png",
-                                                width:
-                                                    constraints.maxWidth * 0.15,
-                                                height:
-                                                    constraints.maxWidth * 0.08,
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: constraints.maxWidth *
-                                                        0.02),
-                                                child: Text(
-                                                  "${_userStore.ak}",
-                                                  style: TextStyle(
-                                                    color: whiteColor,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: size.width *
-                                                        FONT_SIZE_15,
-                                                  ),
-                                                ),
-                                              ),
-                                            ],
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                )
+                                    ],
+                                  );
+                                })
                               ],
                             ),
                           );
