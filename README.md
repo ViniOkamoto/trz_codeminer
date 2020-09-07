@@ -1,4 +1,4 @@
-![TRZApp](assets/images/TRZ.png)
+<img src ="assets/images/TRZ.png" height="600em"/>
 
 # The Resident Zombie
 
