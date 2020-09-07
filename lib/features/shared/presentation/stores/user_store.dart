@@ -18,6 +18,9 @@ abstract class _UserStoreBase with Store {
   final IGetItems _items = serviceLocator<IGetItems>();
   final IGetUserInfo _userInfo = serviceLocator<IGetUserInfo>();
 
+  _UserStoreBase() {
+    getItems();
+  }
   @observable
   User user = User();
 
@@ -37,7 +40,6 @@ abstract class _UserStoreBase with Store {
 
   saveUser(User user) async {
     this.user = user;
-    await getItems();
     return await _auth.saveUser(user);
   }
 
@@ -48,9 +50,14 @@ abstract class _UserStoreBase with Store {
 
   Future<String> getUserInfo() async {
     Response response = await _userInfo.getUserInfoUser(id);
+    print(id);
+    print(response);
     if (response.statusCode == 200) {
       user = UserMapper.fromJson(response.data);
-      if (user.infected) return "INFECTED";
+      print(user.toString());
+      if (user.infected) {
+        return "INFECTED";
+      }
       await getItems();
       return null;
     }
@@ -59,6 +66,7 @@ abstract class _UserStoreBase with Store {
 
   @action
   Future<String> getItems() async {
+    await getId();
     Response response = await _items.getItemsUser(id);
     points = 0;
     if (response.statusCode == 200) {

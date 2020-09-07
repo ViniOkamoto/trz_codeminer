@@ -10,6 +10,7 @@ import 'package:trzapp/features/create_account/presentation/pages/create_account
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/name/name_view.dart';
 import 'package:trzapp/features/create_account/presentation/pages/create_account/views/packages/packages_view.dart';
 import 'package:trzapp/features/create_account/presentation/stores/create_account/create_account_store.dart';
+import 'package:trzapp/features/shared/presentation/stores/user_store.dart';
 import 'package:trzapp/features/shared/presentation/widgets/app_button.dart';
 
 class CreateAccountPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class CreateAccountPage extends StatefulWidget {
 
 class _CreateAccountPageState extends State<CreateAccountPage> {
   CreateAccountStore _store;
+  UserStore _userStore;
 
   List<Widget> pages = [
     GenderView(),
@@ -31,6 +33,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   @override
   void initState() {
     _store = serviceLocator<CreateAccountStore>();
+    _userStore = serviceLocator<UserStore>();
     _store.indexViews = pages.length;
     super.initState();
   }
@@ -38,54 +41,57 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: blackColor,
-      body: PageView(
-        physics: NeverScrollableScrollPhysics(),
-        controller: _store.pageController,
-        children: pages,
-      ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Observer(
-              builder: (context) {
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    AppButton(
-                      onPressed: () async {
-                        if (_store.currentPage == 4) {
-                          String result = await _store.registerUser();
-                          if (result != "OK") {
-                            Scaffold.of(context).showSnackBar(
-                              SnackBar(
-                                backgroundColor: Colors.red,
-                                elevation: 1,
-                                content: Text(result.tr()),
-                              ),
-                            );
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: blackColor,
+        body: PageView(
+          physics: NeverScrollableScrollPhysics(),
+          controller: _store.pageController,
+          children: pages,
+        ),
+        bottomNavigationBar: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Observer(
+                builder: (context) {
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      AppButton(
+                        onPressed: () async {
+                          if (_store.currentPage == 4) {
+                            String result = await _store.registerUser();
+                            if (result != "OK") {
+                              await _userStore.getUserInfo();
+                              Scaffold.of(context).showSnackBar(
+                                SnackBar(
+                                  backgroundColor: Colors.red,
+                                  elevation: 1,
+                                  content: Text(result.tr()),
+                                ),
+                              );
+                              return;
+                            }
+                            Navigator.pushReplacementNamed(
+                                context, Routes.tutorial);
                             return;
                           }
-                          Navigator.pushReplacementNamed(
-                              context, Routes.tutorial);
-                          return;
-                        }
-                        _store.nextView();
-                      },
-                      btnIsValid: _store.enabledButton,
-                      text: _store.currentPage == 4
-                          ? 'PAGES.CREATE_ACCOUNT.BUTTON_REGISTER'.tr()
-                          : 'COMMON.BUTTON_CONTINUE'.tr(),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ],
+                          _store.nextView();
+                        },
+                        btnIsValid: _store.enabledButton,
+                        text: _store.currentPage == 4
+                            ? 'PAGES.CREATE_ACCOUNT.BUTTON_REGISTER'.tr()
+                            : 'COMMON.BUTTON_CONTINUE'.tr(),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

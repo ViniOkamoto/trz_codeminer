@@ -22,6 +22,11 @@ class _MainPageState extends State<MainPage> {
     TradeView(),
     ContactView(),
   ];
+  @override
+  void initState() {
+    _userStore.getUserInfo();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
