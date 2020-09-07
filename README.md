@@ -1,4 +1,4 @@
-<img src ="assets/images/TRZ.png" height="600em"/>
+<img src ="assets/images/TRZ.png" height="300em"/>
 
 # The Resident Zombie
 
