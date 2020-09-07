@@ -1,19 +1,24 @@
+![TRZApp](assets/images/trz_logo_background.png)
+
 # trzapp
 
-A new Flutter application.
+<img src ="assets/gifs/presentation.gif" height="600em"/>
+
+> The project was not finalized, unfortunately, because the backend was turned off, but it contains some codes that may come to help you! Any questions just call me.
 
 ## Getting Started
 
 Hello survivor, I hope things are normal. It is the year 2020 and many things have happened. a pandemic took over the world and people started to behave strangely.
 
 ## Features in TRZ
-- Contact list
+- Contact list with localdb
 - Scan and Generate QRCode
 - User registration location.
--
-
+- Translate EN-US/PT-BR
 - Pixel UI
 - Clean Archicteture
+- Clean Code
+
 
 ## Installation
 - You will need to have the [Flutter](https://flutter.dev/docs/get-started/install) set up on your computer
