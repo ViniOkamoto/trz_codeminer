@@ -1,6 +1,6 @@
-![TRZApp](assets/images/trz_logo_background.png)
+![TRZApp](assets/images/TRZ.png)
 
-# trzapp
+# The Resident Zombie
 
 <img src ="assets/gifs/presentation.gif" height="600em"/>
 
